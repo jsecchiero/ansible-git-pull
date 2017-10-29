@@ -1,0 +1,19 @@
+---
+galaxy_info:
+  license: BSD
+  min_ansible_version: '1.8'
+
+  platforms:
+  - name: Ubuntu
+    versions:
+    - all
+  - name: Debian
+    versions:
+    - all
+  - name: Fedora
+    versions:
+    - all
+
+dependencies: []
+  
+allow_duplicates: yes 

@@ -1,0 +1,16 @@
+---
+# tasks file for git-pull
+
+- name: copy private key
+  copy: src="{{ git_key | realpath }}" dest="/tmp/simple-pki.tmp" mode=0400
+
+- name: git pull using the given key
+  git: 
+    accept_hostkey: yes
+    dest: "{{ git_dir }}/"
+    key_file: "/tmp/simple-pki.tmp"
+    repo: "{{ git_url }}"
+    version: "{{ git_branch }}"
+    recursive: yes
+    force: yes
+    update: yes
