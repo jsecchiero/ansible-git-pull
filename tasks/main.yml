@@ -1,6 +1,9 @@
 ---
 # tasks file for git-pull
 
+- name: install requirements
+  package: name=git
+
 - name: copy private key
   copy: src="{{ git_key | realpath }}" dest="/tmp/simple-pki.tmp" mode=0400
 
